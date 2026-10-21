@@ -1,0 +1,75 @@
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  color: #f4f3fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.widget {
+  position: relative;
+  display: flex;
+  width: 196px;
+  height: 68px;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 29px 10px 10px;
+  border: 1px solid rgba(198, 255, 92, .47);
+  border-radius: 18px;
+  background: rgba(12, 15, 20, .96);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .48), 0 0 22px rgba(198, 255, 92, .12);
+}
+
+.drag-area {
+  width: 39px;
+  flex: 0 0 39px;
+  color: #d5d8cc;
+  cursor: move;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.35;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.drag-area span { display: block; color: #c6ff5c; font-size: 9px; }
+
+#toggleButton {
+  display: flex;
+  height: 40px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: #c6ff5c;
+  color: #11150b;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+#toggleButton.active { background: #ff647f; color: #21090c; }
+.icon { font-size: 20px; transform: rotate(-25deg); }
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #292d36;
+  color: #c8cad1;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 17px;
+}

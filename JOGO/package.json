@@ -1,0 +1,36 @@
+{
+  "name": "lgl-3-0-visual-panel",
+  "version": "1.0.0",
+  "description": "Painel desktop de demonstração visual LGL 3.0",
+  "main": "desktop/electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:windows": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.lgl.panel",
+    "productName": "LGL 3.0",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/electron/**/*",
+      "web/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "web/icons/icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

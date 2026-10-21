@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LGL 3.0 flutuante</title>
+    <link rel="stylesheet" href="overlay.css">
+  </head>
+  <body>
+    <div class="widget">
+      <div class="drag-area" title="Arraste para mover o botão">LGL <span>3.0</span></div>
+      <button id="toggleButton" type="button" aria-pressed="false">
+        <span class="icon" aria-hidden="true">⌁</span>
+        <span id="buttonText">ATIVAR</span>
+      </button>
+      <button id="closeButton" class="close-button" type="button" aria-label="Fechar botão flutuante">×</button>
+    </div>
+    <script>
+      const toggleButton = document.querySelector('#toggleButton');
+      const buttonText = document.querySelector('#buttonText');
+      const desktop = window.lagLabDesktop;
+
+      toggleButton.addEventListener('click', () => desktop.toggleLag());
+      document.querySelector('#closeButton').addEventListener('click', () => desktop.closeOverlay());
+      desktop.onLagState((active) => {
+        toggleButton.classList.toggle('active', active);
+        toggleButton.setAttribute('aria-pressed', String(active));
+        buttonText.textContent = active ? 'DESATIVAR' : 'ATIVAR';
+      });
+    </script>
+  </body>
+</html>
